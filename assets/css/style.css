@@ -63,6 +63,7 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06aed5;
     color: white;
+    justify-content: center;
   }
   
   .saveBtn i:hover {
@@ -70,3 +71,7 @@ body {
     transition: all 0.3s ease-in-out;
   }
   
+  textarea {
+    width:100%;
+    height:100%;
+  }
