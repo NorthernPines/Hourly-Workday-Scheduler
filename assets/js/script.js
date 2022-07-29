@@ -23,14 +23,21 @@ bodyEl.addEventListener("click", function(event) {
     var time = click.getAttribute('value');
 
         if (click.classList.contains('fa')) {
-        schedule[time] = click.parentElement.parentElement.children[2].textContent;
-        localStorage.setItem('schedule', JSON.stringify);
+        schedule[time] = click.parentElement.parentElement.children[2].input;
+        window.localStorage.setItem('schedule', JSON.stringify(schedule));
         console.log(schedule);
         }
 });
     
-//on opening page
-    //load all saved data to hourslots
+// on opening page
+//     load all saved data to hourslots
+function loadSchedule() {
+    schedule = localStorage.getItem('schedule', JSON.parse());
+    console.log(schedule)
+    for (i = 0; i < schedule.length; i++) {
+       bodyEl.children[i].children[2] = schedule[i];
+    }
+}
 
 //show each hour color coded based on past, present, future
     //compare hour slot to current hour using moment
@@ -49,3 +56,4 @@ function changeColors(){
     }
 }
 changeColors();
+loadSchedule();
