@@ -23,7 +23,7 @@ bodyEl.addEventListener("click", function(event) {
     var time = click.getAttribute('value');
 
         if (click.classList.contains('fa')) {
-        schedule[time] = click.parentElement.parentElement.children[2].input;
+        schedule[time] = click.parentElement.parentElement.children[2].children[0].value;
         window.localStorage.setItem('schedule', JSON.stringify(schedule));
         console.log(schedule);
         }
