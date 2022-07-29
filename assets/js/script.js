@@ -5,13 +5,28 @@ console.log(day);
 
 //on save click
     //save context locally
-var bodyEl = document.querySelector('.table').children[0];
+var saveEl = document.querySelector('.fa');
+var bodyEl = document.querySelector('tbody');
+var schedule = {
+    9: "rt",
+    10: "",
+    11: "",
+    12: "",
+    1: "",
+    2: "",
+    3: "",
+    4: "",
+    5: "",
+}
 bodyEl.addEventListener("click", function(event) {
     var click = event.target;
-    
-    if (click.contains('fa') === true) {
-        console.log("hi");
-    }
+    var time = click.getAttribute('value');
+
+        if (click.classList.contains('fa')) {
+        schedule[time] = click.parentElement.parentElement.children[2].textContent;
+        localStorage.setItem('schedule', JSON.stringify);
+        console.log(schedule);
+        }
 });
     
 //on opening page
